@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="GeV3kcfFk_-Dmx_l_IZx" name="ページ1">
-        <mxGraphModel dx="1324" dy="830" grid="1" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1255" dy="724" grid="1" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -223,7 +223,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="79" value="ユーザー情報&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
-                    <mxGeometry x="56" y="126" width="98" height="28" as="geometry"/>
+                    <mxGeometry x="56" y="140" width="98" height="28" as="geometry"/>
                 </mxCell>
                 <mxCell id="81" value="商品情報" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
                     <mxGeometry x="552" y="52" width="84" height="28" as="geometry"/>
