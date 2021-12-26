@@ -29,7 +29,7 @@
 | explanation           | text       | null: false                    |
 | price                 | string     | null: false                    |
 | buyer_id              | string     | null: false, foreign_key: true |     
-
+| id                    | string     | null: false, foreign_key: true |
 
 ### Association 
 
