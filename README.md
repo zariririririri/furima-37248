@@ -62,11 +62,11 @@
 | --------------------- | ------ | --------------------------------- |
 | address               | string | null: false                       |
 | post_code             | string | null: false                       |
-| telephone_number      | string | null: false                       |   
+| prefectures           | string | null: false                       |   
 | municipalities        | string | null: false                       |
 | house_ number         | string |                                   |
+| telephone_number      | string | null: false                       |
 | buyer_id              | string | null: false, foreign_key: true    |
-
 
 ### Association
 
