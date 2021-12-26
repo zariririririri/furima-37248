@@ -7,22 +7,22 @@
 | --------------------- | ------ | ------------------------- |
 | nickname              | string | null: false               |
 | email                 | string | null: false, unique: true |
-| birthday              | string | null: false               |
+| birthday              | date   | null: false               |
 | encrypted_password    | string | null: false               |
 
 ### Association
 
-- has_many :product
-- has_many :purchase
+- has_many :products
+- has_many :purchases
 
 
-##  Product テーブル
+##  Products テーブル
 
 
-| Column                | Type       | Options                       | 
-| --------------------- | ---------- | ----------------------------- |
+| Column                | Type       | Options                       |       
+|---------------------- | ---------- | ----------------------------- | 
 | product_name          | string     | null: false                   |
-| explanation           | string     | null: false                   |
+| explanation           | text       | null: false                   |
 | category              | string     | null: false                   |
 | situation             | string     | null: false                   |
 | delivery_charge       | references | null: false,foreign_key: true |
@@ -32,13 +32,14 @@
 | seller                | string     | null: false                   |
 | image                 | string     | null; false                   |
 
+
 ### Association 
 
-- has_one :product
-- belongs_to :users
+- has_one    :product
+- belongs_to :user
 
 
-##  Purchase テーブル
+##  Purchases テーブル
 
 
 | Column                | Type       | Options                        |
@@ -48,24 +49,24 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - belongs_to :product
-- has_many :shopping_source
+- has_one    :shopping_sources
 
 
 
-## Shopping_source テーブル
+## Shopping_sources テーブル
 
 
-| Column                | Type   | Options         |
-| --------------------- | ------ | --------------- |
-| address               | string | null: false     |
-| post_code             | string | null: false     |
-| telephone_number      | string | null: false     |
-| prefectures           | string | null: false     |
-| municipalities        | string | null: false     |
-| house_ number         | string |                 |
+| Column                | Type   | Options                           |
+| --------------------- | ------ | --------------------------------- |
+| address               | string | null: false                       |
+| post_code             | string | null: false,foreign_key: true     |
+| telephone_number      | string | null: false,foreign_key: true     |
+| municipalities        | string | null: false,foreign_key: true     |
+| house_ number         | string | foreign_key: true                 |
 
 ### Association
 
 - belongs_to :purchase
+
