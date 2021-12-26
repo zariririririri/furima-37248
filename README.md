@@ -29,7 +29,7 @@
 | explanation           | text           | null: false                    |
 | price                 | string         | null: false                    |
 | buyer_id              | references     | null: false, foreign_key: true |     
-| product_id            | string         | null: false, foreign_key: true |
+| product_id            | string         | null: false                    |
 | user_id               | references     | null: false, foreign_key: true |
 
 
