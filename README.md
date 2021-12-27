@@ -10,8 +10,10 @@
 | email              | string | null: false, unique: true |
 | birthday           | date   | null: false               |
 | encrypted_password | string | null: false               |
-| full_width         | string | null: false               |
-| half_width         | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
 
 
 ### Association
@@ -28,20 +30,25 @@
 |---------------------- | -------------- | ------------------------------ | 
 | product_name          | string         | null: false                    |
 | explanation           | text           | null: false                    |
-| price                 | string         | null: false                    |
-| buyer                 | references     | null: false, foreign_key: true |     
+| price                 | integer        | null: false                    |
 | product_id            | string         | null: false                    |
 | user                  | references     | null: false, foreign_key: true |
 | comment               | text           |                                |
-| favorite              | string         |                                |
-| prefectures_id        | integer        | null: false                    |  
+| like                  | integer        |                                |
+| prefectures_id        | integer        | null: false                    | 
+| category_id           | integer        | null: false                    |
+| state_id              | integer        | null: false                    |
+| delivery_id           | integer        | null: false                    |
+| shipment_id           | integer        | null: false                    |
+| delivery_time_id      | integer        | null: false                    | 
+
 
 
 ### Association 
 
-- has_one    :product
+- has_one    :purchases
 - belongs_to :user
-- belongs_to :prefectures
+
 
 
 ##  Purchases テーブル
@@ -50,7 +57,8 @@
 | Column                | Type       | Options                         |
 | --------------------- | ---------- | ------------------------------- |
 | product               | references | null: false, foreign_key: true  |
-| user                  | references | null: false, foreign_key: true  |
+| user                  | references | null: false                     |
+| purchase              | references | null: false, foreign_key: true  |
 
 
 ### Association
