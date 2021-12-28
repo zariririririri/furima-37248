@@ -31,22 +31,18 @@
 | product_name          | string         | null: false                    |
 | explanation           | text           | null: false                    |
 | price                 | integer        | null: false                    |
-| product_id            | string         | null: false                    |
 | user                  | references     | null: false, foreign_key: true |
-| comment               | text           |                                |
-| like                  | integer        |                                |
 | prefectures_id        | integer        | null: false                    | 
 | category_id           | integer        | null: false                    |
 | state_id              | integer        | null: false                    |
 | delivery_id           | integer        | null: false                    |
-| shipment_id           | integer        | null: false                    |
 | delivery_time_id      | integer        | null: false                    | 
 
 
 
 ### Association 
 
-- has_one    :purchases
+- has_one    :purchase
 - belongs_to :user
 
 
@@ -57,8 +53,7 @@
 | Column                | Type       | Options                         |
 | --------------------- | ---------- | ------------------------------- |
 | product               | references | null: false, foreign_key: true  |
-| user                  | references | null: false                     |
-| purchase              | references | null: false, foreign_key: true  |
+| user                  | references | null: false, foreign_key; true  |
 
 
 ### Association
@@ -86,6 +81,6 @@
 ### Association
 
 - belongs_to :purchase
-- belongs_to :prefectures
+
 
 
