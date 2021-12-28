@@ -32,7 +32,7 @@
 | explanation           | text           | null: false                    |
 | price                 | integer        | null: false                    |
 | user                  | references     | null: false, foreign_key: true |
-| prefectures_id        | integer        | null: false                    |
+| prefecture_id        | integer        | null: false                    |
 | category_id           | integer        | null: false                    |
 | state_id              | integer        | null: false                    |
 | delivery_id           | integer        | null: false                    |
@@ -71,9 +71,9 @@
 | --------------------- | ---------- | --------------------------------- |
 | address               | string     | null: false                       |
 | post_code             | string     | null: false                       |
-| prefectures_id        | integer    | null: false                       |
+| prefecture_id        | integer    | null: false                       |
 | municipalities        | string     | null: false                       |
-| house_ number         | string     |                                   |
+| house_number         | string     |                                   |
 | telephone_number      | string     | null: false                       |
 | purchase              | references | null: false, foreign_key: true    |
 
