@@ -3,11 +3,13 @@ class ProductsController < ApplicationController
   # before_action :move_to_index,  except: [:new, :index]
 
   def index
+    @products = product.all
   end
-end
-# def new
-#  # @furima = Furima.new
-# end
+
+
+  def new
+    @product = product.new
+  end
 
 # def create
 #  # @furima = Furima.new (furima_params)
