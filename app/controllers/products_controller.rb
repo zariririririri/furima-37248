@@ -3,12 +3,12 @@ class ProductsController < ApplicationController
   # before_action :move_to_index,  except: [:new, :index]
 
   def index
-    @products = product.all
+    # @products = product.all
   end
 
 
   def new
-    @product = product.new
+    #  @product = product.new
   end
 
 # def create
@@ -20,10 +20,12 @@ class ProductsController < ApplicationController
 #  #   render :new
 # end
 
-#  private
+  private
 
 # #  def move_to_index
 # #   unless user_signed_in?
 # #    redirect_to action: :index
 # #  end
 # end
+ 
+end
