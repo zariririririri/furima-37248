@@ -1,31 +1,31 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:new]
   # before_action :move_to_index,  except: [:new, :index]
 
   def index
-    # @products = product.all
+     @products = Product.all
   end
 
 
   def new
-    #  @product = product.new
+     @product = Product.new
   end
 
-# def create
-#  # @furima = Furima.new (furima_params)
-#  # if @furima.valid?
-#  #   @furima.save
-#  #   redirect_to root_path
-#  # else
-#  #   render :new
-# end
+  def create
+    Product.create(product_params)
+    @product = Product.new(product_params)
+    if @product.valid?
+      @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
 
   private
 
-# #  def move_to_index
-# #   unless user_signed_in?
-# #    redirect_to action: :index
-# #  end
-# end
+  def product_params
+     params.require(:product).permit(:name, :image, :prefecture_id, :category_id, :state_id, :delivery_id, :delivery_time_id).merge(user_id:current_user.id)
+  end
  
 end
