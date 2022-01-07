@@ -9,11 +9,9 @@ app/assets/stylesheets/items/new.css %>
     <h2 class="items-sell-title">商品の情報を入力</h2>
     <%= form_with local: true do |f| %>
 
-   
-    <%= render 'shared/error_messages', model: f.object %>
-  
+       <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 商品画像 %>
+   <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         商品画像
@@ -31,7 +29,7 @@ app/assets/stylesheets/items/new.css %>
     <div class="new-items">
       <div class="weight-bold-text">
         商品名
-        <span class="indispensable">必須</span>
+      <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
@@ -43,8 +41,8 @@ app/assets/stylesheets/items/new.css %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
-
-    <%# 商品の詳細 %>
+   
+        <%# 商品の詳細 %>
     <div class="items-detail">
       <div class="weight-bold-text">商品の詳細</div>
       <div class="form">
@@ -88,7 +86,7 @@ app/assets/stylesheets/items/new.css %>
     </div>
     <%# /配送について %>
 
-    <%# 販売価格 %>
+     <%# 販売価格 %>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
         <span>販売価格<br>(¥300〜9,999,999)</span>
@@ -146,8 +144,7 @@ app/assets/stylesheets/items/new.css %>
     <%# /下部ボタン %>
   </div>
   <% end %>
-
-  <footer class="items-sell-footer">
+   <footer class="items-sell-footer">
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
       <li><a href="#">フリマ利用規約</a></li>
@@ -159,3 +156,6 @@ app/assets/stylesheets/items/new.css %>
     </p>
   </footer>
 </div>
+   
+
+  

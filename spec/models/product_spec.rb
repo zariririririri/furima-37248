@@ -16,18 +16,16 @@ RSpec.describe Product, type: :model do
       it 'nameが空では登録できない' do
         @product.name = ''
         @product.valid?
-
         expect(@product.errors.full_messages).to include("Name can't be blank")
       end
-
+       
       it 'explanationが空では登録できない' do
         @product.explanation = ''
         @product.valid?
-
         expect(@product.errors.full_messages).to include("Explanation can't be blank")
       end
-
-      it 'categoryが空では登録できない' do
+     
+        it 'categoryが空では登録できない' do
         @product.category = nil
         @product.valid?
         expect(@product.errors.full_messages).to include("Category can't be blank")
@@ -83,3 +81,6 @@ RSpec.describe Product, type: :model do
     end
   end
 end
+
+
+      
