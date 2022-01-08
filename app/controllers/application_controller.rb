@@ -15,6 +15,3 @@ class ApplicationController < ActionController::Base
                                       keys: [:nickname, :birthday, :first_name, :last_name, :first_name_kana, :last_name_kana])
   end
 end
-# def furima_params
-#  params.require(:furima).permit(:nickname, :birthdate, :first_name, :last_name, :first_name_kana, :last_name_kana)
-# end
