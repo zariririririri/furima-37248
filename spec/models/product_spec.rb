@@ -18,39 +18,39 @@ RSpec.describe Product, type: :model do
         @product.valid?
         expect(@product.errors.full_messages).to include("Name can't be blank")
       end
-       
+
       it 'explanationが空では登録できない' do
         @product.explanation = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Explanation can't be blank")
       end
-     
-        it 'categoryが空では登録できない' do
-        @product.category = nil
+
+      it 'categoryが空では登録できない' do
+        @product.category_id = '1'
         @product.valid?
         expect(@product.errors.full_messages).to include("Category can't be blank")
       end
 
       it 'stateが空では登録できない' do
-        @product.state = nil
+        @product.state_id = '1'
         @product.valid?
         expect(@product.errors.full_messages).to include("State can't be blank")
       end
 
       it 'deliveryが空では登録できない' do
-        @product.delivery = nil
+        @product.delivery_id = '1'
         @product.valid?
         expect(@product.errors.full_messages).to include("Delivery can't be blank")
       end
 
       it 'prefectureが空では登録できない' do
-        @product.prefecture = nil
+        @product.prefecture_id = '1'
         @product.valid?
         expect(@product.errors.full_messages).to include("Prefecture can't be blank")
       end
 
       it 'delivery_timeが空では登録できない' do
-        @product.delivery_time = nil
+        @product.delivery_time_id = '1'
         @product.valid?
         expect(@product.errors.full_messages).to include("Delivery time can't be blank")
       end
@@ -78,9 +78,18 @@ RSpec.describe Product, type: :model do
         @product.valid?
         expect(@product.errors.full_messages).to include('User must exist')
       end
+
+      it '価格に半角数字以外が含まれている場合は登録できない' do
+        @product.price = '１２３'
+        @product.valid?
+        expect(@product.errors.full_messages).to include('Price is not a number')
+      end
+
+      it '価格が、9999999円を超える場合は登録できない' do
+        @product.price = '9999999999'
+        @product.valid?
+        expect(@product.errors.full_messages).to include('Price must be less than or equal to 9999999')
+      end
     end
   end
 end
-
-
-      
