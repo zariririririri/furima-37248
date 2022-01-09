@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: :index
-  # before_action :set_product, only: [:edit, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :set_product, only: [:edit, :show] /// beforeのまとめ
 
   def index
     @products = Product.all.order(created_at: :desc)
@@ -20,8 +20,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # @product = Product.find(params[:id])
-  end
+    @product = Product.find(params[:id])
+  end 
+  
 
   def update
     # product = Product.find(params[:id])
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    # @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def destroy
@@ -48,4 +49,13 @@ class ProductsController < ApplicationController
   # def set_product
   #    @product = Product.find(params[:id])
   # end
+
+  # def previous
+  #   Product.where(' id<? ', id).order('id DESC').first
+  # end
+
+  # def next
+  #   Product.where(' id>? ', id).order('id ASC').first
+  ### show.html.erbの前、後の商品表示のメソッド   
+
 end
