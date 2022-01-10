@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: :index
-  # before_action :set_product, only: [:edit, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :set_product, only: [:edit, :show] /// beforeのまとめ
 
   def index
     @products = Product.all.order(created_at: :desc)
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    # @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def destroy
