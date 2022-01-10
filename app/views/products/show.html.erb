@@ -26,12 +26,12 @@
     </div>
      <% if user_signed_in? %>   <%# <% && @product.purchase.blank? %>
       <% if current_user.id == @product.user_id %>
-        <%= link_to "商品の編集","#" method: :get, class: "item-red-btn" %>
+        <%= link_to "商品の編集", edit_product_path, method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
-        <%= link_to "削除", "#" method: :delete, class:"item-destroy" %>
+        <%= link_to "削除", product_path, method: :delete, class:"item-destroy" %>
         <%# <% else @product.purchase.blank? %> 
       <% else %>
-        <%= link_to "購入画面に進む", "#" class:"item-red-btn" %> 
+        <%= link_to "購入画面に進む", product_path, class:"item-red-btn" %> 
       <% end %>
      <% end %>
     <div class="item-explain-box">
@@ -92,9 +92,8 @@
       </button>
     </form>
   </div>
-  
   <div class="links">
-    <a href= "#", class="change-item-btn">
+  <a href= "#", class="change-item-btn">
       ＜ 前の商品
     </a>
     <a href= "#", class="change-item-btn">
@@ -103,5 +102,4 @@
  </div>
   <a href="#" class="another-item"><%= @product.category.name %>をもっと見る</a>
   </div>
-
-<%= render "shared/footer" %>
+    <%= render "shared/footer" %>

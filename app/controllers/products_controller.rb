@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  # before_action :set_product, only: [:edit, :show] /// beforeのまとめ
+  before_action :set_product, only: [:edit, :show]
 
   def index
     @products = Product.all.order(created_at: :desc)
@@ -17,19 +17,25 @@ class ProductsController < ApplicationController
     else
       render :new
     end
-  end
-
+   end
+ 
   def show
     @product = Product.find(params[:id])
   end
 
-  def update
-    # product = Product.find(params[:id])
-    # product.update(product_params)
-  end
-
   def edit
+    unless current_user.id == @product.user_id
+      redirect_to root_path 
+    end
+  end 
+
+  def update
     @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to product_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -38,14 +44,14 @@ class ProductsController < ApplicationController
     # redirect_to root_path
   end
 
-  private
+private
 
   def product_params
     params.require(:product).permit(:name, :image, :explanation, :price, :prefecture_id, :category_id, :state_id, :delivery_id,
                                     :delivery_time_id).merge(user_id: current_user.id)
   end
 
-  # def set_product
-  #    @product = Product.find(params[:id])
-  # end
-end
+  def set_product
+    @product = Product.find(params[:id])
+  end
+ end
