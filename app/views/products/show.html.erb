@@ -7,7 +7,7 @@
       <%= @product.name %>
     </h2>
     <div class="item-img-content">
-      <%# <%= image_tag product.image, class: 'item-box-img' if product.image.attached? %>  
+     <%= image_tag @product.image, class: 'item-box-img' if @product.image.attached? %>  
       <%# 商品が売れている場合は、sold outを表示しましょう %>
       <%# <% if @product.purchase.blank? %> 
       <div class="sold-out">
@@ -93,14 +93,14 @@
     </form>
   </div>
   <div class="links">
-  <% if @product.previous.blank? %>
-    <a href= "PREV", product_path(@product.previous), class="change-item-btn">
+  
+    <a href= "#", class="change-item-btn">
       ＜ 前の商品
     </a>
-    <a href= "NEXT", product_path(@product.next), class="change-item-btn">
+    <a href= "#", class="change-item-btn">
       後ろの商品 ＞
     </a>
-    <% end %>
+ 
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
   <a href="#" class="another-item"><%= @product.category.name %>をもっと見る</a>

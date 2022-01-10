@@ -21,8 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-  end 
-  
+  end
 
   def update
     # product = Product.find(params[:id])
@@ -49,13 +48,4 @@ class ProductsController < ApplicationController
   # def set_product
   #    @product = Product.find(params[:id])
   # end
-
-  # def previous
-  #   Product.where(' id<? ', id).order('id DESC').first
-  # end
-
-  # def next
-  #   Product.where(' id>? ', id).order('id ASC').first
-  ### show.html.erbの前、後の商品表示のメソッド   
-
 end
