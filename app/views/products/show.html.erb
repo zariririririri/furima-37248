@@ -26,9 +26,9 @@
     </div>
      <% if user_signed_in? %>   <%# <% && @product.purchase.blank? %>
       <% if current_user.id == @product.user_id %>
-        <%= link_to "商品の編集", product_path, method: :get, class: "item-red-btn" %>
+        <%= link_to "商品の編集","#" method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
-        <%= link_to "削除", product_path, method: :delete, class:"item-destroy" %>
+        <%= link_to "削除", "#" method: :delete, class:"item-destroy" %>
         <%# <% else @product.purchase.blank? %> 
       <% else %>
         <%= link_to "購入画面に進む", product_path, class:"item-red-btn" %> 
@@ -92,19 +92,16 @@
       </button>
     </form>
   </div>
-  <div class="links">
   
+  <div class="links">
     <a href= "#", class="change-item-btn">
       ＜ 前の商品
     </a>
     <a href= "#", class="change-item-btn">
       後ろの商品 ＞
     </a>
- 
-  </div>
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+ </div>
   <a href="#" class="another-item"><%= @product.category.name %>をもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-</div>
+  </div>
 
 <%= render "shared/footer" %>
