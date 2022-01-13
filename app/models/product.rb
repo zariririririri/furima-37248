@@ -1,9 +1,7 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  # has_one :card
-
-  validates  :image,               presence: true
+ validates  :image,               presence: true
   validates  :price,               presence: true,
                                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   validates  :name,                presence: true
@@ -20,5 +18,6 @@ class Product < ApplicationRecord
   belongs_to :prefecture
   belongs_to :state
   belongs_to :user
+  has_one :buy
   has_one_attached :image
 end

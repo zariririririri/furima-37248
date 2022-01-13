@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
    end
  
   def show
-  end
+  end 
   
   def edit
   end 
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
     product = Product.find(params[:id])
     product.destroy
@@ -59,3 +59,4 @@ private
     end
   end
  end
+  
