@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :product do
-    name              { '宇佐田 うさ子' }
-    explanation       { 'ああああいううううう' }
+    name              { '美味しい' }
+    explanation       { 'あああいうううええおー' }
     category_id       { 2 }
     state_id          { 2 }
     delivery_id       { 2 }
