@@ -135,15 +135,15 @@
           
        <div class='item-img-content'>
         <%= image_tag product.image.variant(resize: '185.16 x 185.16'), class: 'product-img' if product.image.attached? %>
-           <%# <% if @products.purchase.present? %> 
-              <%# <div class='sold-out'> %>
-                <%# <span>Sold Out!!</span> %>
-              <%# </div> %>
-           <%# <% end %> 
+           <% if product.buy.present? %> 
+           <div class='sold-out'> 
+           <span>Sold Out!!</span> 
+           </div> 
+           <% end %> 
        </div>
        <div class='item-info'>
          <h3 class='item-name'> 
-           <%= product.name %>       
+           <%= product.name %>
          </h3>
           <div class='item-price'> 
             <span><%= product.price %>円<br><%= product.delivery.name %></span>

@@ -19,6 +19,4 @@ class BuyReceiver
    Receiver.create( post_code:post_code, telephone_number:telephone_number, city:city, house_number:house_number,
                    prefecture_id:prefecture_id, buy_id:buy.id )
   end
- end                                
-   
-   
+ end 

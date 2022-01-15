@@ -1,16 +1,13 @@
 const pay = () => {
   
-
-  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
+Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
   const submit = document.getElementById("button");
   submit.addEventListener("click", (e) => {
     e.preventDefault();
     const formResult = document.getElementById("charge-form");
     const formData = new FormData(formResult);
-   
-
-    
-    const card = {
+  
+   const card = {
       number: formData.get("buy_receiver[number]"),
       cvc: formData.get("buy_receiver[cvc]"),
       exp_month: formData.get("buy_receiver[exp_month]"),
@@ -26,7 +23,7 @@ const pay = () => {
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
       }
 
-      document.getElementById("card-number").removeAttribute("name");
+    document.getElementById("card-number").removeAttribute("name");
       document.getElementById("card-cvc").removeAttribute("name");
       document.getElementById("card-exp-month").removeAttribute("name");
       document.getElementById("card-exp-year").removeAttribute("name");
@@ -35,7 +32,5 @@ const pay = () => {
     });
   });
 };
-
-
-
+    
 window.addEventListener("load", pay);
