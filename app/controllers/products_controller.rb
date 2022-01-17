@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   end
    
   def destroy
-    product.destroy
+    @product.destroy
     redirect_to root_path
   end
     
@@ -52,8 +52,8 @@ class ProductsController < ApplicationController
   end
 
   def correct_products
-   unless @product.user_id != current_user.id || @product.buy == nil
-    redirect_to root_path
-  end
+    if current_user.id != @product.user.id || @product.buy != nil
+      redirect_to root_path 
+   end
  end
 end
