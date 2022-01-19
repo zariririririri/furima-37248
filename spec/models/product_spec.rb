@@ -28,31 +28,31 @@ RSpec.describe Product, type: :model do
       it 'categoryが空では登録できない' do
         @product.category_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Categorycan't be blank")
+        expect(@product.errors.full_messages).to include("Categoryを入力して下さい")
       end
 
       it 'stateが空では登録できない' do
         @product.state_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Statecan't be blank")
+        expect(@product.errors.full_messages).to include("Stateを入力して下さい")
       end
 
       it 'deliveryが空では登録できない' do
         @product.delivery_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Deliverycan't be blank")
+        expect(@product.errors.full_messages).to include("Deliveryを入力して下さい")
       end
 
       it 'prefectureが空では登録できない' do
         @product.prefecture_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Prefecturecan't be blank")
+        expect(@product.errors.full_messages).to include("Prefecturecを入力して下さい")
       end
 
       it 'delivery_timeが空では登録できない' do
         @product.delivery_time_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Delivery timecan't be blank")
+        expect(@product.errors.full_messages).to include("Delivery timeを入力して下さい")
       end
 
       it 'priceが空では登録できない' do
