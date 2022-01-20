@@ -3,6 +3,28 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-      tweet:
-        text: テキスト
-        image: 画像
+        name: 氏名
+        first_name: 名前
+        last_name: 名字   
+        first_name_kana: 名前(カタカナ)
+        last_name_kana: 名字(カタカナ)
+        birthday: 誕生日
+      product:
+        name: 商品名
+        explanation: 説明文
+        price: 金額
+        image: 商品画像
+        prefecture_id: 都道府県
+        category_id: カテゴリー
+        state_id: 状態
+        delivery_id: 発送場所
+        delivery_time_id: 発送日時
+  activemodel:
+    attributes:
+      buy_receiver:
+        post_code: 郵便番号
+        telephone_number: 電話番号
+        city: 市区町村
+        house_number: 番地
+        token: クレジットカード
+        prefecture_id: 都道府県

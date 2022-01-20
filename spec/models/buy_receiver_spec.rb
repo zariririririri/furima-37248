@@ -48,55 +48,55 @@ context '内容に問題がある場合' do
   it 'post_codeが空だと保存できないこと' do
     @buy_receiver.post_code = ''
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Post codeを入力してください")
+    expect(@buy_receiver.errors.full_messages).to include("郵便番号を入力してください")
   end
 
   it '市区町村が空だと保存できないこと' do
     @buy_receiver.city = nil
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Cityを入力してください")
+    expect(@buy_receiver.errors.full_messages).to include("市区町村を入力してください")
   end
 
   it '番地が空だと保存できないこと' do
     @buy_receiver.house_number = nil
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("House numberを入力してください")
+    expect(@buy_receiver.errors.full_messages).to include("番地を入力してください")
   end
 
   it 'post_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
     @buy_receiver.post_code = '1234567'
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include('Post codeは半角の"-"を含んで下さい')
+    expect(@buy_receiver.errors.full_messages).to include("郵便番号は半角の”-”を含んで下さい")
   end
 
   it 'prefectureを選択していないと保存できないこと' do
     @buy_receiver.prefecture_id = nil
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Prefectureを入力してください")
+    expect(@buy_receiver.errors.full_messages).to include("都道府県を入力してください")
   end
 
   it 'prefecture-idの1を選択された場合保存できないこと' do
     @buy_receiver.prefecture_id = '1'
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Prefectureを入力して下さい")
+    expect(@buy_receiver.errors.full_messages).to include("都道府県を入力して下さい")
   end
 
   it 'telephone_numberが９桁以下では購入できない' do
     @buy_receiver.telephone_number = '09012356'
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include('Telephone numberは不正な値です')
+    expect(@buy_receiver.errors.full_messages).to include('電話番号は不正な値です')
   end
 
   it 'telephone_numberが空だと保存できない' do
     @buy_receiver.telephone_number = nil 
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Telephone numberを入力してください")
+    expect(@buy_receiver.errors.full_messages).to include("電話番号を入力してください")
   end
 
   it 'telephone_numberは数値のみでしか保存できない' do
     @buy_receiver.telephone_number = '壱参伍'
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Telephone numberは不正な値です")
+    expect(@buy_receiver.errors.full_messages).to include("電話番号は不正な値です")
   end
 
   it 'productが紐付いていないと保存できないこと' do
@@ -114,7 +114,7 @@ context '内容に問題がある場合' do
   it 'tokenが空では登録できないこと' do
     @buy_receiver.token = ''
     @buy_receiver.valid?
-    expect(@buy_receiver.errors.full_messages).to include("Tokenを入力してください")
+    expect(@buy_receiver.errors.full_messages).to include("クレジットカードを入力してください")
   end
   end
  end 
