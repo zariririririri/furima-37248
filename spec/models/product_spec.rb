@@ -40,7 +40,7 @@ RSpec.describe Product, type: :model do
       it 'deliveryが空では登録できない' do
         @product.delivery_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("発送場所を入力して下さい")
+        expect(@product.errors.full_messages).to include("配送料の負担を入力して下さい")
       end
 
       it 'prefectureが空では登録できない' do

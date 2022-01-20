@@ -17,7 +17,7 @@ ja:
         prefecture_id: 都道府県
         category_id: カテゴリー
         state_id: 状態
-        delivery_id: 発送場所
+        delivery_id: 配送料の負担
         delivery_time_id: 発送日時
   activemodel:
     attributes:
